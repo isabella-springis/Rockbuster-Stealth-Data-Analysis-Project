@@ -4,6 +4,7 @@ You’ve been hired as a data analyst by Rockbuster Stealth’s business intelli
 Answered a series of business questions from The Rockbuster Stealth Management Board and provided data-driven answers that they can use for their 2020 company campaign.
 
 Questions:
+
 1.	Which movies contributed the most/least to revenue gain? 
 2.	What was the average rental duration for all videos?
 3.	Which countries are Rockbuster customers based in?
