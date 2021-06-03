@@ -11,9 +11,7 @@ Questions:
 4.	Where are customers with a high lifetime value based?
 5.	Do sales figures vary between geographic regions?
 
-
 How: 
 * Query the data using SQL.
 * Visualize the data in an easy-to-consume manner.
-![image](https://user-images.githubusercontent.com/71847867/120619160-054e8780-c45c-11eb-9db2-bcd550a41ddf.png)
 
