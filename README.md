@@ -15,7 +15,7 @@ The Rockbuster Stealth Management Board have requested data-drriven answers to u
 4. Where are customers with a high lifetime value based? 
 5. Do sales figures vary between geographic regions?
 
-### Analytical Process: Steps outlined in brief
+### Analytical Process
 
 * Filter Data
 * Summarise & Clean Data
