@@ -1,0 +1,88 @@
+** Check for and clean dirty data: **
+
+-- Duplicates: Film
+
+SELECT title,
+ release_year,
+ language_id,
+ rental_duration,
+ COUNT(*)
+FROM film
+GROUP BY title
+ release_year,
+ language_id,
+ rental_duration
+HAVING COUNT(*) >1
+
+-- Duplicates: Customer
+
+SELECT store_id,
+ first_name,
+ last_name,
+ address_id,
+COUNT(*)
+FROM customer
+GROUP BY store_id,
+ first_name,
+ last_name,
+ address_id
+HAVING COUNT(*) > 1
+
+-- Non Uniform: Film
+SELECT DISTINCT title, release_year, language_id, rental_duration
+FROM film;
+
+-- Non Uniform: Customer
+SELECT DISTINCT store_id, first_name, last_name, address_id
+FROM customer;
+
+-- Missing: Film
+UPDATE film
+SET = AVG(col1)
+WHERE col1 IS NULL
+
+-- Missing: Customer
+UPDATE customer
+SET = AVG(col1)
+WHERE col1 IS NULL
+
+** Summarize your data: **
+
+-- Film
+
+SELECT
+MIN(rental_duration) AS min_rent_duration,
+MAX(rental_duration) AS max_rent_duration,
+AVG(rental_duration) AS avg_rent_duration,
+COUNT(rental_duration) AS count_rent_duration,
+COUNT(*) AS count_rows
+FROM film;
+
+SELECT
+MIN(length) AS min_length,
+MAX(length) AS max_length,
+AVG(length) AS avg_length,
+COUNT(length) AS count_length,
+COUNT(*) AS count_rows
+FROM film;
+
+SELECT
+MIN(rental_rate) AS min_rent_rate,
+MAX(rental_rate) AS max_rent_rate,
+AVG(rental_rate) AS avg_rent_rate,
+COUNT(rental_rate) AS count_rent_rate,
+COUNT(*) AS count_rows
+FROM film; 
+
+-- Customer
+SELECT mode() WITHIN GROUP (ORDER BY store_id)
+AS modal_value
+FROM customer;
+
+SELECT mode() WITHIN GROUP (ORDER BY first_name)
+AS modal_value
+FROM customer;
+
+SELECT mode() WITHIN GROUP (ORDER BY last_name)
+AS modal_value
+FROM customer;
