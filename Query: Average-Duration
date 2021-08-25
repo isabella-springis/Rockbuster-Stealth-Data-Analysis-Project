@@ -1,0 +1,9 @@
+SELECT c.name AS genre,
+       AVG(f.rental_duration) AS average_rental_duration
+FROM film f
+INNER JOIN film_category fc
+       ON f.film_id = f.film_id
+INNER JOIN category c
+       ON fc.category_id = c.category_id
+GROUP BY c.name
+ORDER BY average_rental_duration;
